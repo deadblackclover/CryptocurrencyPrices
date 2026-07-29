@@ -1,0 +1,42 @@
+﻿[
+  {
+    "Id": "bitcoin",
+    "Name": "Bitcoin",
+    "Ticker": "BTC"
+  },
+  {
+    "Id": "ethereum",
+    "Name": "Ethereum",
+    "Ticker": "ETH"
+  },
+  {
+    "Id": "monero",
+    "Name": "Monero",
+    "Ticker": "XMR"
+  },
+  {
+    "Id": "polkadot",
+    "Name": "Polkadot",
+    "Ticker": "DOT"
+  },
+  {
+    "Id": "cosmos",
+    "Name": "Cosmos Hub",
+    "Ticker": "ATOM"
+  },
+  {
+    "Id": "cardano",
+    "Name": "Cardano",
+    "Ticker": "ADA"
+  },
+  {
+    "Id": "aptos",
+    "Name": "Aptos",
+    "Ticker": "APT"
+  },
+  {
+    "Id": "tron",
+    "Name": "Tron",
+    "Ticker": "TRX"
+  }
+]
