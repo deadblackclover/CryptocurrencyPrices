@@ -8,9 +8,10 @@ namespace CryptocurrencyPrices.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            var bitmapImage = new BitmapImage();
-            var uriString = CreatePath(value is string name && !string.IsNullOrEmpty(name) ? name : "Bitcoin");
-            bitmapImage.UriSource = new Uri(uriString);
+            var bitmapImage = new BitmapImage
+            {
+                UriSource = CreatePath(value is string name && !string.IsNullOrEmpty(name) ? name : "Bitcoin")
+            };
             return bitmapImage;
         }
 
@@ -19,6 +20,10 @@ namespace CryptocurrencyPrices.Converters
             throw new NotImplementedException();
         }
 
-        private string CreatePath(string name) => $"ms-appx:///Assets/Coins/{name}.png";
+        private Uri CreatePath(string name)
+        {
+            var uriString = $"ms-appx:///Assets/Coins/{name.Replace(" ", "_")}.png";
+            return new Uri(uriString);
+        }
     }
 }
