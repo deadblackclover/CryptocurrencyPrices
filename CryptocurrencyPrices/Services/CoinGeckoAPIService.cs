@@ -7,9 +7,10 @@ namespace CryptocurrencyPrices.Services
 {
     class CoinGeckoAPIService : IAPIService
     {
-        private readonly HttpClient _httpClient;
+        const string BASE_URL = "https://api.coingecko.com/api/v3";
 
-        private string _targetCurrencies;
+        private readonly HttpClient _httpClient;
+        private readonly string _targetCurrencies;
 
         public CoinGeckoAPIService(double timeout, string targetCurrencies = "usd")
         {
@@ -25,7 +26,7 @@ namespace CryptocurrencyPrices.Services
         public async Task<JObject> GetPrices(string[] ids)
         {
             var idsString = string.Join(",", ids);
-            var url = $"https://api.coingecko.com/api/v3/simple/price?ids={idsString}&vs_currencies={_targetCurrencies}";
+            var url = $"{BASE_URL}/simple/price?ids={idsString}&vs_currencies={_targetCurrencies}";
 
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();

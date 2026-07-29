@@ -7,7 +7,7 @@ namespace CryptocurrencyPrices.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if (value is int price)
+            if (value is float price)
             {
                 return "$" + price.ToString();
             }
