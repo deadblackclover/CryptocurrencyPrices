@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="CryptocurrencyPrices.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:CryptocurrencyPrices.Converters"
+    xmlns:models="using:CryptocurrencyPrices.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <converters:ImagePathConverter x:Key="ImagePathConverter"/>
+        <converters:PriceConverter x:Key="PriceConverter"/>
+    </Page.Resources>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="95">
+            <TextBlock
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="32"
+                Margin="10"
+                Text="Cryptocurrency Prices"/>
+        </StackPanel>
+
+        <ListView
+            x:Name="CoinsGridView"
+            ItemsSource="{x:Bind ViewModel.Prices, Mode=OneWay}"
+            Margin="0,100,0,0"
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Left">
+
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:CryptocurrencyPrice">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Ellipse Width="32" Height="32">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{x:Bind Cryptocurrency.Name, Converter={StaticResource ImagePathConverter}}" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock x:Name="CoinNameText" Text="{x:Bind Cryptocurrency.Name}" FontSize="22" Margin="10" MinWidth="130"/>
+                        <TextBlock x:Name="TickerText" Text="{x:Bind Cryptocurrency.Ticker}" FontSize="20" Margin="10" MinWidth="60"/>
+                        <TextBlock x:Name="PriceText" Text="{x:Bind Price, Converter={StaticResource PriceConverter}}" FontSize="22" Margin="10"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
