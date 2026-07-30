@@ -9,7 +9,7 @@ namespace CryptocurrencyPrices.Converters
         {
             if (value is float price)
             {
-                return "$" + price.ToString();
+                return "$" + price.ToString("F2");
             }
             return "$0";
         }
