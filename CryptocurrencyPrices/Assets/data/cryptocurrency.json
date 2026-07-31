@@ -10,9 +10,34 @@
     "Ticker": "ETH"
   },
   {
+    "Id": "zksync",
+    "Name": "ZKsync",
+    "Ticker": "ZK"
+  },
+  {
+    "Id": "starknet",
+    "Name": "Starknet",
+    "Ticker": "STRK"
+  },
+  {
+    "Id": "solana",
+    "Name": "Solana",
+    "Ticker": "SOL"
+  },
+  {
     "Id": "monero",
     "Name": "Monero",
     "Ticker": "XMR"
+  },
+  {
+    "Id": "grin",
+    "Name": "Grin",
+    "Ticker": "GRIN"
+  },
+  {
+    "Id": "the-open-network",
+    "Name": "Gram",
+    "Ticker": "GRAM"
   },
   {
     "Id": "polkadot",
@@ -30,6 +55,21 @@
     "Ticker": "ADA"
   },
   {
+    "Id": "internet-computer",
+    "Name": "Internet Computer",
+    "Ticker": "ICP"
+  },
+  {
+    "Id": "mina-protocol",
+    "Name": "Mina Protocol",
+    "Ticker": "MINA"
+  },
+  {
+    "Id": "aleo",
+    "Name": "ALEO",
+    "Ticker": "ALEO"
+  },
+  {
     "Id": "aptos",
     "Name": "Aptos",
     "Ticker": "APT"
@@ -38,5 +78,20 @@
     "Id": "tron",
     "Name": "Tron",
     "Ticker": "TRX"
+  },
+  {
+    "Id": "vaulta",
+    "Name": "Vaulta",
+    "Ticker": "A"
+  },
+  {
+    "Id": "waves",
+    "Name": "Waves",
+    "Ticker": "WAVES"
+  },
+  {
+    "Id": "hive",
+    "Name": "Hive",
+    "Ticker": "HIVE"
   }
 ]

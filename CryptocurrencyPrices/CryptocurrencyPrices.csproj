@@ -190,12 +190,23 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Coins\Bitcoin.png" />
     <Content Include="Assets\Coins\Ethereum.png" />
+    <Content Include="Assets\Coins\ZKsync.png" />
+    <Content Include="Assets\Coins\Starknet.png" />
+    <Content Include="Assets\Coins\Solana.png" />
     <Content Include="Assets\Coins\Monero.png" />
+    <Content Include="Assets\Coins\Grin.png" />
+    <Content Include="Assets\Coins\Gram.png" />
     <Content Include="Assets\Coins\Polkadot.png" />
     <Content Include="Assets\Coins\Cosmos_Hub.png" />
     <Content Include="Assets\Coins\Cardano.png" />
+    <Content Include="Assets\Coins\Internet_Computer.png" />
+    <Content Include="Assets\Coins\Mina_Protocol.png" />
+    <Content Include="Assets\Coins\ALEO.png" />
     <Content Include="Assets\Coins\Aptos.png" />
     <Content Include="Assets\Coins\Tron.png" />
+    <Content Include="Assets\Coins\Vaulta.png" />
+    <Content Include="Assets\Coins\Waves.png" />
+    <Content Include="Assets\Coins\Hive.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
