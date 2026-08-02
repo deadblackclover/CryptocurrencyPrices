@@ -1,96 +1,96 @@
 ﻿[
   {
-    "Id": "bitcoin",
+    "CoinGeckoId": "bitcoin",
     "Name": "Bitcoin",
     "Ticker": "BTC"
   },
   {
-    "Id": "ethereum",
+    "CoinGeckoId": "ethereum",
     "Name": "Ethereum",
     "Ticker": "ETH"
   },
   {
-    "Id": "zksync",
+    "CoinGeckoId": "zksync",
     "Name": "ZKsync",
     "Ticker": "ZK"
   },
   {
-    "Id": "starknet",
+    "CoinGeckoId": "starknet",
     "Name": "Starknet",
     "Ticker": "STRK"
   },
   {
-    "Id": "solana",
+    "CoinGeckoId": "solana",
     "Name": "Solana",
     "Ticker": "SOL"
   },
   {
-    "Id": "monero",
+    "CoinGeckoId": "monero",
     "Name": "Monero",
     "Ticker": "XMR"
   },
   {
-    "Id": "grin",
+    "CoinGeckoId": "grin",
     "Name": "Grin",
     "Ticker": "GRIN"
   },
   {
-    "Id": "the-open-network",
+    "CoinGeckoId": "the-open-network",
     "Name": "Gram",
     "Ticker": "GRAM"
   },
   {
-    "Id": "polkadot",
+    "CoinGeckoId": "polkadot",
     "Name": "Polkadot",
     "Ticker": "DOT"
   },
   {
-    "Id": "cosmos",
+    "CoinGeckoId": "cosmos",
     "Name": "Cosmos Hub",
     "Ticker": "ATOM"
   },
   {
-    "Id": "cardano",
+    "CoinGeckoId": "cardano",
     "Name": "Cardano",
     "Ticker": "ADA"
   },
   {
-    "Id": "internet-computer",
+    "CoinGeckoId": "internet-computer",
     "Name": "Internet Computer",
     "Ticker": "ICP"
   },
   {
-    "Id": "mina-protocol",
+    "CoinGeckoId": "mina-protocol",
     "Name": "Mina Protocol",
     "Ticker": "MINA"
   },
   {
-    "Id": "aleo",
+    "CoinGeckoId": "aleo",
     "Name": "ALEO",
     "Ticker": "ALEO"
   },
   {
-    "Id": "aptos",
+    "CoinGeckoId": "aptos",
     "Name": "Aptos",
     "Ticker": "APT"
   },
   {
-    "Id": "tron",
+    "CoinGeckoId": "tron",
     "Name": "Tron",
     "Ticker": "TRX"
   },
   {
-    "Id": "vaulta",
+    "CoinGeckoId": "vaulta",
     "Name": "Vaulta",
     "Ticker": "A"
   },
   {
-    "Id": "waves",
+    "CoinGeckoId": "waves",
     "Name": "Waves",
     "Ticker": "WAVES"
   },
   {
-    "Id": "hive",
+    "CoinGeckoId": "hive",
     "Name": "Hive",
     "Ticker": "HIVE"
   }

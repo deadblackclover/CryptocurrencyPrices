@@ -9,7 +9,7 @@ namespace CryptocurrencyPrices.Services
 {
     class CryptocurrencyService
     {
-        const string PATH = "ms-appx:///Assets/data/cryptocurrency.json";
+        const string PATH = "ms-appx:///Assets/Data/Cryptocurrency.json";
 
         public async Task<List<Cryptocurrency>> LoadCurrencies()
         {

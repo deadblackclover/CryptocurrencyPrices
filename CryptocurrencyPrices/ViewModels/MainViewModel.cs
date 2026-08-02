@@ -1,9 +1,7 @@
 ﻿using CryptocurrencyPrices.Models;
 using CryptocurrencyPrices.Services;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 
@@ -35,20 +33,13 @@ namespace CryptocurrencyPrices.ViewModels
             try
             {
                 var currencies = await _cryptocurrencyService.LoadCurrencies();
-                var ids = currencies.Select(item => item.Id).ToArray();
-                var result = await _apiService.GetPrices(ids);
+                var prices = await _apiService.GetPrices(currencies);
 
                 _prices.Clear();
 
-                foreach (var c in currencies)
+                foreach (var price in prices)
                 {
-                    if (result.TryGetValue(c.Id, out JToken cryptocurrencyToken))
-                    {
-                        if (cryptocurrencyToken is JObject cryptocurrency && cryptocurrency.TryGetValue(TARGET_CURRENCIES, out JToken price))
-                        {
-                            _prices.Add(new CryptocurrencyPrice { Cryptocurrency = c, Price = (float)price });
-                        }
-                    }
+                    _prices.Add(price);
                 }
             }
             catch (Exception e)

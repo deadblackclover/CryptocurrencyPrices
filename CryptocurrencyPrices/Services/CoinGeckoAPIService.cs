@@ -1,5 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using CryptocurrencyPrices.Models;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -23,8 +26,9 @@ namespace CryptocurrencyPrices.Services
             _targetCurrencies = targetCurrencies;
         }
 
-        public async Task<JObject> GetPrices(string[] ids)
+        public async Task<List<CryptocurrencyPrice>> GetPrices(List<Cryptocurrency> currencies)
         {
+            var ids = currencies.Select(item => item.CoinGeckoId);
             var idsString = string.Join(",", ids);
             var url = $"{BASE_URL}/simple/price?ids={idsString}&vs_currencies={_targetCurrencies}";
 
@@ -34,7 +38,20 @@ namespace CryptocurrencyPrices.Services
             var json = await response.Content.ReadAsStringAsync();
             var data = JObject.Parse(json);
 
-            return data;
+            var result = new List<CryptocurrencyPrice>();
+
+            foreach (var c in currencies)
+            {
+                if (data.TryGetValue(c.CoinGeckoId, out JToken cryptocurrencyToken))
+                {
+                    if (cryptocurrencyToken is JObject cryptocurrency && cryptocurrency.TryGetValue(_targetCurrencies, out JToken price))
+                    {
+                        result.Add(new CryptocurrencyPrice { Cryptocurrency = c, Price = (float)price });
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }

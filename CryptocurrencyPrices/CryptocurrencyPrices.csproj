@@ -141,7 +141,7 @@
     <None Include="CryptocurrencyPrices_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\data\cryptocurrency.json" />
+    <Content Include="Assets\Data\Cryptocurrency.json" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
