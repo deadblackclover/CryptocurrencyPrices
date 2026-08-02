@@ -2,5 +2,7 @@
 
 A UWP application that shows the current price of cryptocurrencies
 
-<img alt="screenshot_desktop" src="Screenshots/screenshot_desktop.png" height="400">
-<img alt="screenshot_lumia_640" src="Screenshots/screenshot_lumia_640.png" height="400">
+<p>
+  <img alt="screenshot_desktop" src="Screenshots/screenshot_desktop.png" height="500">
+  <img alt="screenshot_lumia_640" src="Screenshots/screenshot_lumia_640.png" height="500">
+</p>
