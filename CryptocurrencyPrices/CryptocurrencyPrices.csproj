@@ -121,6 +121,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ImagePathConverter.cs" />
+    <Compile Include="Converters\WidthToZeroConverter.cs" />
     <Compile Include="Models\CryptocurrencyPrice.cs" />
     <Compile Include="Models\Cryptocurrency.cs" />
     <Compile Include="Services\CoinGeckoAPIService.cs" />

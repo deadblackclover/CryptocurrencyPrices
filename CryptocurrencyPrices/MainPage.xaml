@@ -1,17 +1,19 @@
 ﻿<Page
+    x:Name="ThisPage"
     x:Class="CryptocurrencyPrices.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:converters="using:CryptocurrencyPrices.Converters"
-    xmlns:models="using:CryptocurrencyPrices.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:CryptocurrencyPrices.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
         <converters:ImagePathConverter x:Key="ImagePathConverter"/>
         <converters:PriceConverter x:Key="PriceConverter"/>
+        <converters:WidthToZeroConverter x:Key="TickerWidthConverter"/>
     </Page.Resources>
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -53,7 +55,17 @@
                                 <ImageBrush ImageSource="{x:Bind Cryptocurrency.Name, Converter={StaticResource ImagePathConverter}}" Stretch="UniformToFill"/>
                             </Ellipse.Fill>
                         </Ellipse>
-                        <TextBlock Grid.Column="1" Text="{x:Bind Cryptocurrency.Name}" FontSize="22" Margin="10"/>
+
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Text="{x:Bind Cryptocurrency.Name}" FontSize="22" Margin="10"/>
+                            <TextBlock
+                                Text="{x:Bind Cryptocurrency.Ticker}"
+                                FontSize="22"
+                                Margin="10"
+                                Opacity="0.5"
+                                Width="{Binding ElementName=ThisPage, Path=ActualWidth, ConverterParameter=720, Converter={StaticResource TickerWidthConverter}}"/>
+                        </StackPanel>
+                        
                         <TextBlock Grid.Column="2" Text="{x:Bind Price, Converter={StaticResource PriceConverter}}" HorizontalAlignment="Right" FontSize="22" Margin="10"/>
                     </Grid>
                 </DataTemplate>
