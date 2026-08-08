@@ -2,12 +2,14 @@
 using CryptocurrencyPrices.Services;
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 
 namespace CryptocurrencyPrices.ViewModels
 {
-    class MainViewModel
+    class MainPageViewModel : INotifyPropertyChanged
     {
         const double TIMEOUT = 10;
         const string TARGET_CURRENCIES = "usd";
@@ -16,7 +18,7 @@ namespace CryptocurrencyPrices.ViewModels
         private CryptocurrencyService _cryptocurrencyService;
         private ObservableCollection<CryptocurrencyPrice> _prices;
 
-        public MainViewModel()
+        public MainPageViewModel()
         {
             _apiService = new CoinGeckoAPIService(TIMEOUT, TARGET_CURRENCIES);
             _cryptocurrencyService = new CryptocurrencyService();
@@ -27,6 +29,8 @@ namespace CryptocurrencyPrices.ViewModels
         {
             get => _prices;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public async Task LoadDataAsync()
         {
@@ -41,6 +45,8 @@ namespace CryptocurrencyPrices.ViewModels
                 {
                     _prices.Add(price);
                 }
+
+                OnPropertyChanged(nameof(Prices));
             }
             catch (Exception e)
             {
@@ -48,6 +54,9 @@ namespace CryptocurrencyPrices.ViewModels
                 await ShowErrorAsync("Error", e.Message);
             }
         }
+
+        private void OnPropertyChanged([CallerMemberName] string name = null) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
         private async Task ShowErrorAsync(string title, string message)
         {

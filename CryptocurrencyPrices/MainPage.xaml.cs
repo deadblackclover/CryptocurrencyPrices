@@ -6,7 +6,7 @@ namespace CryptocurrencyPrices
 {
     public sealed partial class MainPage : Page
     {
-        MainViewModel ViewModel { get; } = new MainViewModel();
+        MainPageViewModel ViewModel { get; } = new MainPageViewModel();
 
         public MainPage()
         {
